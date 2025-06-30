@@ -1,6 +1,6 @@
 from random import choice
 
-lista_palabras = ['manzana', 'helado', 'carpinteria', 'escuela', 'mochila']
+lista_palabras = ['manzana', 'helado', 'carpinteria', 'escuela', 'mochila', 'escalera', 'serpiente', 'princesa', 'trabajo', 'escuelinista', 'stitch', 'matematicas']
 
 def escoger_palabra(lista):
     return choice(lista)
@@ -35,9 +35,9 @@ def mostrar_letras(indices, palabra_escondida, letra):
     return lista_escondida
 
 
-print("########   Bienvenido al Juego del Ahorcado   ########")
+print("########   Bienvenido al Juego del Ahorcado   ########\n")
 palabra = escoger_palabra(lista_palabras)
-palabra_oculta = palabra.replace(palabra, '-' * len(palabra))
+palabra_oculta = palabra.replace(palabra, '_' * len(palabra))
 print(palabra_oculta)
 letras_erroneas = []
 vidas = 6
@@ -55,13 +55,14 @@ while vidas > 0:
             print('Ganaste!')
             break
 
-    elif vidas == 0:
-        print('Perdiste!')
-        break
-
     else:
         vidas -= 1
-        print(f'Fallaste, te quedan {vidas} vidas.')
-        letras_erroneas.append(letra)
-        print(f'Letras erroneas: {letras_erroneas}')
-        print(palabra_oculta)
+        if vidas == 0:
+            print(f'Te quedan {vidas} vidas, Perdiste!')
+            print(f'La palabra escondida era: {palabra}')
+            break
+        else:
+            print(f'Fallaste, te quedan {vidas} vidas.\n')
+            letras_erroneas.append(letra)
+            print(f'Letras erroneas: {letras_erroneas}')
+            print(palabra_oculta)

@@ -1,6 +1,9 @@
 from random import choice
 
-lista_palabras = ['manzana', 'helado', 'carpinteria', 'escuela', 'mochila', 'escalera', 'serpiente', 'princesa', 'trabajo', 'escuelinista', 'stitch', 'matematicas']
+lista_palabras = ['manzana', 'helado', 'carpinteria',
+                  'escuela', 'mochila', 'escalera',
+                  'serpiente', 'princesa', 'trabajo',
+                  'escuelinista', 'stitch', 'matematicas']
 
 def escoger_palabra(lista):
     return choice(lista)
